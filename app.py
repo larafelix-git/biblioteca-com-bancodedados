@@ -24,7 +24,7 @@ if not os.path.exists(EXPORT_FOLDER):
 
 db = SQLAlchemy(app)
 
-# Modelos de dados (removido o tipo 'question')
+# Modelos de dados
 class Item(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     type = db.Column(db.String(10), nullable=False)  # 'book'
