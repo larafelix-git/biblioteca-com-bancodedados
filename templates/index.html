@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo ao Sistema</title>
+</head>
+<body>
+    <h1>Bem-vindo ao Sistema de Biblioteca</h1>
+    
+    <p>Escolha uma das opções:</p>
+    
+    <ul>
+        <!-- Link para página de login -->
+        <li><a href="{{ url_for('login') }}">Fazer Login</a></li>
+        
+        <!-- Link para ver livros -->
+        <li><a href="{{ url_for('view_books') }}">Ver Livros</a></li>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+
+    </ul>
+</body>
+</html>

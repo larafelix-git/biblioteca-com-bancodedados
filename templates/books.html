@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca de Livros</title>
+</head>
+<body>
+    <h1>Biblioteca de Livros</h1>
+    
+    <p>Lista de Livros Disponíveis:</p>
+    
+    <ul>
+        {% for book in books %}
+            <li>
+                {{ book.title }} - {{ book.author }}
+                {% if book.filename %}
+                    <!-- Link para download do arquivo -->
+                    <a href="{{ url_for('download_file', filename=book.filename) }}" download>Download</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+    
+    <a href="{{ url_for('index') }}">Voltar para a página inicial</a>
+</body>
+</html>
