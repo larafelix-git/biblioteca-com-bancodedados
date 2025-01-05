@@ -1,0 +1,4 @@
+*.html linguist-language=HTML
+*.py linguist-language=Python
+*.sql linguist-language=SQL
+
